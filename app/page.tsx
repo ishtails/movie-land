@@ -19,7 +19,6 @@ const App = () => {
 
   useEffect(() => {
     searchMovies(searchTerm || "Marvel").then((movies) => {
-      console.log(movies)
       setMovies(movies);
     });
   }, [searchTerm]);
