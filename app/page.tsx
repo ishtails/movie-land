@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from "./moviecard";
 import { searchMovies } from "./fetchMovies";
+import Link from "next/link";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -18,6 +19,7 @@ const App = () => {
 
   useEffect(() => {
     searchMovies(searchTerm || "Marvel").then((movies) => {
+      console.log(movies)
       setMovies(movies);
     });
   }, [searchTerm]);
@@ -33,7 +35,6 @@ const App = () => {
           onChange={(e) => {
             setDebounced(e.target.value);
           }}
-          autoComplete="off"
         />
 
         <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={() => {
@@ -47,9 +48,9 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie: movie) => (
-            <div key={movie.imdbID}>
+            <Link target="_blank" href={`https://www.imdb.com/title/${movie.imdbID}/`} key={movie.imdbID}>
               <MovieCard movie={movie} />
-            </div>
+            </Link>
           ))}
         </div>
       ) : (

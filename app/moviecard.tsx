@@ -1,11 +1,10 @@
+import { data } from "autoprefixer";
 import Image from "next/image";
 import React from "react";
 
 type Props = {
   movie: movie;
 }
-
-const dataURI = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
 
 const MovieCard = (props: Props) => {
   return (
@@ -16,14 +15,14 @@ const MovieCard = (props: Props) => {
 
       <div>
         <Image
-          src={props.movie.Poster !== "N/A" ? props.movie.Poster : "https://via.placeholder.com/400"}
+          src={props.movie.Poster !== "N/A" ? props.movie.Poster : "/placeholder.png"}
           alt={props.movie.Title}
-          width={300}
-          height={300}
+          width={2000}
+          height={3000}
           quality={75}
           priority={false}
           placeholder='blur'
-          blurDataURL={`data:image/png;base64,${dataURI}`}
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
         />
       </div>
 
