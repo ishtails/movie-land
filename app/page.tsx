@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSearchTerm(debounced);
-    }, 500);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, [debounced]);
