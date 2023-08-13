@@ -17,9 +17,8 @@ const MovieCard = (props: Props) => {
         <Image
           src={props.movie.Poster !== "N/A" ? props.movie.Poster : "/placeholder.png"}
           alt={props.movie.Title}
-          width={2000}
-          height={3000}
-          quality={75}
+          width={1000}
+          height={1500}
           priority={false}
           placeholder='blur'
           blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
